@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <stroke
+                android:width="0.1dp"
+                android:color="#FFFFFF" />
+            <solid android:color="#dcd2c8" /> <!-- Background color -->
+        </shape>
+    </item>
+    <item android:gravity="center">
+        <shape>
+            <solid android:color="#FFFFFF" /> <!-- Circle color -->
+            <size android:width="20dp" android:height="20dp" /> <!-- Circle size -->
+            <corners android:radius="10dp" /> <!-- Make it a circle -->
+        </shape>
+    </item>
+</layer-list>
