@@ -21,10 +21,14 @@ public class Strategy implements Serializable {
     private int[] VerticalDownCode = new int[]{+1, 0};
     private int[] HorizontalLeftCode = new int[]{0, -1};
     private int[] HorizontalRightCode = new int[]{0, 1};
+
+    public GameActivity gameActivity;
     private final int[][] codeSequence = {RightDiagUpCode, RightDiagDownCode, LeftDiagUpCode, LeftDiagDownCode, HorizontalRightCode, HorizontalLeftCode, VerticalUpCode, VerticalDownCode};
 
-    public Strategy(Board board){
+    public Strategy(Board board, GameActivity gameActivity){
         _board = board;
+        this.gameActivity = gameActivity;
+
     }
     /**
      * Generates random coordinates for a move.
@@ -476,7 +480,7 @@ public class Strategy implements Serializable {
      * @param fromHelp     Indicates whether the move is generated from a help request.
      * @return An array representing the best move [row, column] for the given color.
      */
-    public int[] BestMove(char colour, GameActivity gameActivity, int totalMove, boolean fromHelp){
+    public int[] BestMove(char colour,int totalMove, boolean fromHelp){
         // test bestMove for capture and other stuff here
         if(totalMove == 0 && colour == WHITE_PIECE){
             if(fromHelp){
